@@ -1,0 +1,20 @@
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+
+        L = 0
+        R = len(nums) - 1
+
+        while L <= R:
+            mid = (L + R) // 2
+
+            if target < nums[mid]:
+                R = mid - 1
+            elif target > nums[mid]:
+                L = mid + 1
+            else:
+                print('THUS MID')
+                return mid
+
+        print('NOT FOUND')
+        return L
+        
